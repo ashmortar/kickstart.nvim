@@ -1,5 +1,4 @@
 return {
-
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -7,6 +6,14 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
+        dockerfile = { 'hadolint' },
+        json = { 'jsonlint' },
+        typescript = { 'eslint' },
+        typescriptreact = { 'eslint' },
+        javascript = { 'eslint' },
+        javascriptreact = { 'eslint' },
+        python = { 'ruff' },
+        terraform = { 'tflint' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
